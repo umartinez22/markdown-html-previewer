@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { MarkdownContext, ThemeContext } from "../../Contexts";
+import { MarkdownContext, ThemeContext } from "../../../utils/contexts";
 import DonwloadButton from "../DownloadButton";
 
 const MarkdownPreview = () => {

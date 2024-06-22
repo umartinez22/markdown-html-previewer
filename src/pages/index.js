@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import MarkdownContainer from "./components/MarkdownContainer";
 import MarkdownInput from "./components/MarkdownInput";
 import MarkdownPreview from "./components/MarkdownPreview";
-import { ThemeContext, MarkdownContext } from "./Contexts";
+import { ThemeContext, MarkdownContext } from "../utils/contexts";
 
 import { Inter } from "next/font/google";
 
