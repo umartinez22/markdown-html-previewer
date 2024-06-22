@@ -1,6 +1,22 @@
 import { useContext } from "react";
 import { MarkdownContext, ThemeContext } from "../../../Contexts";
 
+const DonwloadButton = ({ content }) => {
+  const file = new Blob([content], { type: "text/html" });
+
+  return (
+    <a
+      className="download-button"
+      download="output.html"
+      target="_blank"
+      rel="noreferrer"
+      href={URL.createObjectURL(file)}
+    >
+      Donwload As HTML
+    </a>
+  );
+};
+
 const MarkdownPreview = () => {
   let markdownContext = useContext(MarkdownContext);
   let themeContext = useContext(ThemeContext);
@@ -12,7 +28,7 @@ const MarkdownPreview = () => {
         style={{ backgroundColor: themeContext.default.secondaryColor }}
       >
         <span>Preview</span>
-        <button>Donwload As HTML</button>
+        <DonwloadButton content={markdownContext.htmlPreview} />
       </div>
       <div
         className="preview"
