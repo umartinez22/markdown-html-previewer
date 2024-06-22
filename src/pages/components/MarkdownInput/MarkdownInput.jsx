@@ -25,7 +25,10 @@ const MarkdownInput = ({ onTransformMarkdown }) => {
       >
         Markdown
       </div>
-      <textarea onChange={(e) => onChange(e.target.value)}></textarea>
+      <textarea
+        placeholder="Insert the markdown here..."
+        onChange={(e) => onChange(e.target.value)}
+      ></textarea>
     </div>
   );
 };
