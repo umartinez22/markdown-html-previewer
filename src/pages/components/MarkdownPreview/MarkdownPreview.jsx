@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { MarkdownContext, ThemeContext } from "../../../Contexts";
+import { MarkdownContext, ThemeContext } from "../../Contexts";
 
 const DonwloadButton = ({ content }) => {
   const file = new Blob([content], { type: "text/html" });

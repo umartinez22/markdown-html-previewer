@@ -1,30 +1,22 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Head from "next/head";
 import Header from "./components/Header";
 import MarkdownContainer from "./components/MarkdownContainer";
 import MarkdownInput from "./components/MarkdownInput";
 import MarkdownPreview from "./components/MarkdownPreview";
-import { ThemeContext, MarkdownContext } from "../Contexts";
+import { ThemeContext, MarkdownContext } from "./Contexts";
 
 import { Inter } from "next/font/google";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
 
-const markdownContextData = { htmlPreview: "" };
-
-const themeContextData = {
-  default: {
-    id: "1",
-    name: "Belize Hole",
-    primaryColor: "#2980b9",
-    secondaryColor: "#3498db",
-  },
-};
-
 export default function Home() {
-  let [markdown, setMarkdown] = useState(markdownContextData);
-  let [theme, setTheme] = useState(themeContextData);
+  let themeContext = useContext(ThemeContext);
+  let markdownContext = useContext(MarkdownContext);
+
+  let [markdown, setMarkdown] = useState(markdownContext);
+  let [theme, setTheme] = useState(themeContext);
 
   return (
     <>
