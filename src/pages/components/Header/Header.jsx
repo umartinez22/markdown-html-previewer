@@ -14,6 +14,18 @@ const themes = [
     primaryColor: "#2980b9",
     secondaryColor: "#3498db",
   },
+  {
+    id: "2",
+    name: "Green Sea",
+    primaryColor: "#16a085",
+    secondaryColor: "#1abc9c",
+  },
+  {
+    id: "3",
+    name: "Sun Flower",
+    primaryColor: "#f39c12",
+    secondaryColor: "#f1c40f",
+  },
 ];
 
 const Header = ({ onChangeTheme }) => {
@@ -28,6 +40,7 @@ const Header = ({ onChangeTheme }) => {
       <div>
         <span className="title">Theme: </span>
         <select
+          value={themeContext.default.id}
           onChange={(e) =>
             onChangeTheme(
               themes.filter((item) => item.id === e.target.value)[0]

@@ -15,9 +15,10 @@ const markdownContextData = { htmlPreview: "" };
 
 const themeContextData = {
   default: {
-    name: "Mid Night",
-    primaryColor: "#2c3e50",
-    secondaryColor: "#34495e",
+    id: "1",
+    name: "Belize Hole",
+    primaryColor: "#2980b9",
+    secondaryColor: "#3498db",
   },
 };
 
@@ -36,7 +37,9 @@ export default function Home() {
       <main className={inter.className}>
         <ThemeContext.Provider value={theme}>
           <Header
-            onChangeTheme={(newTheme) => setTheme({ default: newTheme })}
+            onChangeTheme={(selectedTheme) =>
+              setTheme({ default: selectedTheme })
+            }
           />
           <MarkdownContainer>
             <MarkdownContext.Provider value={markdown}>
